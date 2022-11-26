@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./styles/style.css">
+
+  <title>Frontend Mentor | Interactive card details form</title>
+
+</head>
+
+<body>
+
+  <div id="containerCards">
+    <div class="shadowCard" id="frontCard">
+      <img src="./images/card-logo.svg" alt="card logo" class="card-logo">
+
+      <p class="card-number" id="cardNumber">
+        <span id="section1Card">0000</span>
+        <span id="section2Card">0000</span>
+        <span id="section3Card">0000</span>
+        <span id="section4Card">0000</span>
+      </p>
+
+      <div class="card-info">
+        <p id="cardName">JANE APPLESEED</p>
+        <p id="cardData"><span id="cardMonth">01</span>/<span id="cardYear">24</span></p>
+      </div>
+    </div>
+    <div class="shadowCard" id="backCard">
+      <p id="securityNumber">000</p>
+    </div>
+  </div>
+
+  <div id="containerInfos">
+    <div id="infoSection">
+      <h2>CARDHOLDER NAME</h2>
+      <div class="cardholder-input">
+        <input type="text" placeholder="e.g. Jane Appleseed" class="fill-width" id="infoName" maxlength="30">
+        <p class="error" id="holderError">This field cannot be empty</p>
+        <p class="error" id="holderInvalidLength">Needs to have at least 8 characters</p>
+      </div>
+
+      <h2>CARD NUMBER</h2>
+      <div class="card-number-input">
+        <input type="text" placeholder="xxxx" class="card-section" maxlength="4"
+          onkeydown="javascript: return ['Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true : !isNaN(Number(event.key)) && event.code!=='Space'"
+          id="infoNumber1">
+
+        <input type="text" placeholder="xxxx" class="card-section" maxlength="4" id="infoNumber2"
+          onkeydown="javascript: return ['Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true : !isNaN(Number(event.key)) && event.code!=='Space'">
+
+        <input type="text" placeholder="xxxx" class="card-section" maxlength="4" id="infoNumber3"
+          onkeydown="javascript: return ['Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true : !isNaN(Number(event.key)) && event.code!=='Space'">
+
+        <input type="text" placeholder="xxxx" class="card-section" maxlength="4" id="infoNumber4"
+          onkeydown="javascript: return ['Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true : !isNaN(Number(event.key)) && event.code!=='Space'">
+        <p class="error" id="empty-error">This field(s) cannot be empty and have to be fullfiled(s)</p>
+      </div>
+
+      <h2 class="double-title">EXP. DATE (MM/YY) <span>CVC</span></h2>
+      <div class="bottom-inputs">
+        <select class="small-width" id="infoMonth">
+        </select>
+
+        <select class="small-width" id="infoYear">
+        </select>
+
+        <input type="text" placeholder="e.g. 123" class="margin-left" maxlength="3" id="cvc"
+          onkeydown="javascript: return ['Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true : !isNaN(Number(event.key)) && event.code!=='Space'">
+        <p class="error-cvc" id="cvcError">CVC cannot be empty</p>
+        <p class="error-cvc" id="cvcInvalidForm">Invalid CVC</p>
+      </div>
+      <button id="confirm">Confirm</button>
+    </div>
+
+
+  </div>
+
+  <div id="processing">
+    <p style="color: hsl(270, 100%, 41%); text-align: center; font-size: 25px ;">
+      Processing and validating...
+    </p>
+    <img src="./images/loading.png" alt="loading image" id="loading" width="40px">
+  </div>
+
+  <div id="completeSection">
+
+
+    <img src="images/icon-complete.svg" alt="complete">
+    <h2 style="text-align: center; font-size: 30px; text-transform: uppercase; font-weight: 100;">Thank you!</h2>
+    <p style="color: hsl(279, 6%, 55%); text-align: center;">
+      We've added your card details
+    </p>
+    <button id="continue">Continue</button>
+  </div>
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="./scripts/script.js"></script>
+</body>
+
+</html>

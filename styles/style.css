@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    display: flex;
+    min-height: 100vh;
+    align-items: stretch;
+    font-family: 'Space Grotesk', Arial, Helvetica, sans-serif;
+}
+
+#containerCards{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../images/bg-main-desktop.png);
+    background-repeat: no-repeat;
+    color: white;
+}
+
+.shadowCard{
+    box-shadow: 10px 30px 20px rgba(0, 0, 0, 0.189);
+    border-radius: 14px;
+}
+
+.bg{
+    background-color: blue;
+}
+
+#backCard{
+    align-self: flex-end;
+    margin-top: 2rem;
+}
+
+#containerInfos{
+    width: 55%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+#infoSection{
+
+    width: 450px;
+}
+
+.card-section{
+    text-align: center;
+    width: 24%;
+}
+
+.card-number{
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-number span{
+    width: 20%;
+}
+
+.card-number-input{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+h2{
+    color: hsl(278, 68%, 11%);
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+.double-title{
+    display: flex;
+    justify-content: space-between;
+}
+
+.double-title span{
+    width: 50%;
+}
+
+input, select{
+    margin-bottom: 30px;
+    padding: 10px;
+    border-radius: 10px;
+    border: solid 1px gray;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.fill-width{
+    width: 100%;
+}
+
+.small-width{
+    width: 20%;
+    margin-right: 5px;
+}
+
+.bottom-inputs{
+    display: flex;
+    position: relative;
+}
+
+.margin-left{
+    margin-left: auto;
+    width: 50%;
+}
+
+
+
+button{
+    transition: 0.3s;
+    display: block;
+    background-color: hsl(278, 68%, 11%);
+    color: white;
+    width: 100%;
+    border: none;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: 'Space Grotesk',Arial, Helvetica, sans-serif;
+}
+
+button:hover{
+    transition: 0.3s;
+    cursor: pointer;
+    background-color: hsl(277, 67%, 20%);
+    transform: scale(1.01);
+}
+
+#frontCard{
+    display: flex;
+    flex-direction: column;
+    width: 390px;
+    height: 214px;
+    background-image: url(../images/bg-card-front.png);
+    background-position: center;
+    background-size: cover;
+    box-sizing: border-box;
+    padding: 25px;
+}
+
+.card-logo{
+    width: 65px;
+    margin-bottom: auto;
+}
+
+.card-number{
+    font-size: 28px;
+    word-spacing: 8px;
+}
+
+.card-info{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+#backCard{
+    position: relative;
+    width: 390px;
+    height: 214px;
+    background-image: url(../images/bg-card-back.png);
+    background-position: center;
+    background-size: cover;
+    box-sizing: border-box;
+}
+
+#securityNumber{
+    position: absolute;
+    font-size: 18px;
+    top: 94px;
+    right: 50px;
+    text-align: center;
+}
+
+
+.cardholder-input{
+    position: relative;
+}
+
+.error{
+    color: red;
+    font-size: 12px;
+    position: absolute;
+    top: 60%;
+}
+
+
+
+.error-cvc{
+    color: red;
+    font-size: 12px;
+    position: absolute;
+    top: 60%;
+    left: 51%;
+}
+
+.error-state-input{
+    border-color: red;
+}
+
+#holderError, #cvcError, #cvcInvalidForm, #holderInvalidLength, #empty-error{
+    display: none;
+}
+
+.show{
+    display: block;
+}
+
+input:focus{
+    outline: none;
+    outline: solid 1px purple;
+}
+
+#completeSection{
+    display: none;
+    flex-direction: column;
+    width: 55%;
+    align-items: center;
+    justify-content: center;
+}
+
+#completeSection img{
+    margin-bottom: 1rem;
+}
+
+#completeSection p{
+    margin-bottom: 2rem;
+}
+
+#continue{
+    width: 250px;
+}
+
+#processing{    
+    display: none;
+    flex-direction: row;
+    width: 55%;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes rotate {
+    from{
+        rotate: 0deg;
+    }    
+    to{
+        rotate: 360deg;
+    }
+}
+
+#loading{
+    margin-left: 20px;
+    animation-name: rotate;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 1.5s;
+}
+
+
+@media screen and (max-width: 950px){
+    body{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #containerCards{
+        width: 100%;
+        flex-direction: column-reverse;
+        background-size: cover;
+        padding: 0px 20px 20px 20px;
+        box-sizing: border-box;
+        margin-bottom: 3rem;
+    }
+
+    #frontCard{
+        align-self: flex-start;
+        z-index: 1;
+        transform: scale(0.9);
+    }
+
+    #backCard{
+        transform: scale(0.9);
+        margin-bottom: -93px;
+    }
+    #containerInfos{
+        width: 90%;
+    }
+
+}
+
+@media screen and (max-width: 500px){
+    #frontCard{
+        transform: scale(0.7);
+    }
+
+    #backCard{
+        transform: scale(0.7);
+    }
+
+    body{
+        padding-bottom: 2rem;
+    }
+
+    #processing{
+        margin-top: 4rem;
+    }
+}
