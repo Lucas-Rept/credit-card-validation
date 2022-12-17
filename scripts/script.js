@@ -169,6 +169,16 @@ $("#confirm").click(() => {
 
 $("#continue").click(() => {
 
+    console.log($("#infoName").val());
+    console.log($("#cardName").text());    
+    console.log($("#section1Card").text());
+    console.log($("#section2Card").text());
+    console.log($("#section3Card").text());
+    console.log($("#section4Card").text());  
+    console.log($("#cvc").val());
+    console.log($("#infoMonth").val());
+    console.log($("#infoYear").val());
+    
     $("#infoName").val("");
     $("#cardName").text("JANE APPLESEED")
 
